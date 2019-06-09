@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../OpenGL/include/glut.h
+windows.h
+-
+GL/gl.h
+-
+GL/glu.h
+-
+
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/codes/Sphere-to-Cube.cpp
+bits/stdc++.h
+-
+windows.h
+-
+glut.h
+-
+

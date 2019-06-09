@@ -1,0 +1,7 @@
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/glutdlllib.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/demo.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/wheel.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/cubeToSphere.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/testing.dir
+C:/Users/Heisenberg/Desktop/4-1/graphics sessional/OpenGL transformation, camera rotation, wheel movement offline/Graphics-Offline-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
