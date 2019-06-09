@@ -19,7 +19,7 @@ PgDn - move down
 5 - tilt clockwise
 6 - tilt counterclockwise
 
-## Hint:
+Hint for 1:
 Maintain 4 global variables: 1 3d point pos to indicate the position of the camera and 3 3d unit vectors u, r, and l to indicate the up, right, and look directions respectively. u, r, and l must be perpendicular to each other, i.e., u.r = r.l = l.u = 0, u = r X l, l = u X r, and r = l X u. You should initialize and maintain the values of u, r, and l such that the above property holds throughout the execution of the program. For example, you can initialize them as follows: u = (0, 0, 1), r = (-1/√2, 1/√2, 0), l = (-1/√2, -1/√2, 0), and pos = (100, 100, 0). And while changing u, r, and l, make sure that they remain unit vectors perpendicular to each other.
 The first 6 operations listed above are move operations, where the position of the camera changes but the up, right, and look directions do not. The last 6 operations are rotate operations, where the camera position does not change, but the direction vectors do.
 In case of a move operation, move pos a certain amount along the appropriate direction, but leave the direction vectors unchanged. For example, in the move right operation, move pos along r by 2 (or by any amount you find appropriate) units.
