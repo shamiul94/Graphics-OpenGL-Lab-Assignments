@@ -250,9 +250,17 @@ rodriguesFormula(HomogeneousPointVector X, HomogeneousPointVector A, const doubl
     return returnVector;
 }
 
+class SmallStack {
+public:
+    stack<Matrix> Stack;
 
-stack<Matrix> smallStack;
-stack<stack<Matrix>> bigStack;
+    SmallStack() {
+        Matrix I(1);
+        Stack.push(I);
+    };
+};
+
+stack<SmallStack> bigStack;
 
 HomogeneousPointVector eye, look, up;
 HomogeneousPointVector l, u, r;
@@ -307,8 +315,9 @@ int main() {
 
     Matrix projectionMatrix(near, far, r, t);
 
-    Matrix I(1);
-    smallStack.push(I);
+
+    SmallStack smallStack;
+
 
     string command;
 
@@ -330,7 +339,7 @@ int main() {
             for (const auto &trianglePoint : trianglePoints) {
 
                 //P’ <- transformPoint(S.top,P)
-                HomogeneousPointVector model = transformPoint(smallStack.top(), trianglePoint);
+                HomogeneousPointVector model = transformPoint(smallStack.Stack.top(), trianglePoint);
                 HomogeneousPointVector view = transformPoint(V, model);
                 HomogeneousPointVector projection = transformPoint(projectionMatrix, view);
 
@@ -355,7 +364,7 @@ int main() {
             HomogeneousPointVector tem(tx, ty, tz);
             Matrix translationMatrix(tem);
 
-            smallStack.push(smallStack.top() * translationMatrix);
+            smallStack.Stack.push(smallStack.Stack.top() * translationMatrix);
 
         } else if (command == "scale") {     //else if command = “scale”
             //input scaling factors
@@ -364,7 +373,7 @@ int main() {
 
             Matrix scalingMatrix = Matrix(sx, sy, sz);
 
-            smallStack.push(smallStack.top() * scalingMatrix);
+            smallStack.Stack.push(smallStack.Stack.top() * scalingMatrix);
 
         } else if (command == "rotate") {    //else if command = “rotate”
 
@@ -391,7 +400,7 @@ int main() {
                     {0,    0,    0,    1}
             };
 
-            smallStack.push((smallStack.top() * rotationMatrix));
+            smallStack.Stack.push((smallStack.Stack.top() * rotationMatrix));
 
         } else if (command == "push") {    //else if command = “push”
 

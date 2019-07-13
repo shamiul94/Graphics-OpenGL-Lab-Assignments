@@ -1,6 +1,7 @@
-//
-// Created by shamiul93 on 7/13/19.
-//
+/**
+ * @author: Shamiul Hasan
+ * @Problem: GL offline 2
+ */
 
 #include <bits/stdc++.h>
 
@@ -9,22 +10,26 @@
 
 using namespace std;
 
+double degreeToRadian(double deg) {
+    return (deg * pi / 180.0);
+}
+
 class Matrix;
+
+class HomogeneousPointVector;
 
 class HomogeneousPointVector {
 public:
-    double x, y, z, w;
+    double x, y, z, w{};
 
     HomogeneousPointVector() {
         x = y = z = 0;
-//        w = 1;
     }
 
     HomogeneousPointVector(double xx, double yy, double zz) {
         x = xx;
         y = yy;
         z = zz;
-//        w = 1;
     }
 
     double getModulus() {
@@ -95,7 +100,7 @@ public:
         init();
     }
 
-    Matrix(double a) { // useful for making identity matrix
+    explicit Matrix(double a) { // useful for making identity matrix
         init();
 
         matrix = vector<vector<double>>{
@@ -123,7 +128,7 @@ public:
         };
     }
 
-    Matrix(HomogeneousPointVector vec) { // useful for making translation matrix
+    explicit Matrix(HomogeneousPointVector vec) { // useful for making translation matrix
         init();
 
         matrix = vector<vector<double>>{
@@ -169,8 +174,8 @@ public:
     }
 
     Matrix operator*(Matrix const &m) {
-        int row1 = static_cast<int>(matrix.size()), col1 = static_cast<int>(matrix[0].size());
-        int row2 = static_cast<int>(m.matrix.size()), col2 = static_cast<int>(m.matrix[0].size());
+        auto row1 = static_cast<int>(matrix.size()), col1 = static_cast<int>(matrix[0].size());
+        auto row2 = static_cast<int>(m.matrix.size()), col2 = static_cast<int>(m.matrix[0].size());
 
         if (col1 != row2) {
             cout << "Can not multiply" << endl;
@@ -182,7 +187,6 @@ public:
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < col2; j++) {
                 returnMatrix.matrix[i][j] = 0;
-
                 for (int k = 0; k < col1; k++) {
                     returnMatrix.matrix[i][j] += matrix[i][k] * m.matrix[k][j];
                 }
@@ -205,21 +209,7 @@ public:
         return ret;
     }
 
-
-    void printMatrix() {
-        for (auto row: matrix) {
-            for (auto cell: row) {
-                cout << cell << ' ';
-            }
-            cout << endl;
-        }
-    }
 };
-
-
-Matrix convertPointToMatrix(HomogeneousPointVector vec) {
-    return Matrix(true, vec);
-}
 
 HomogeneousPointVector transformPoint(Matrix matrix, HomogeneousPointVector vec) {
     Matrix columnVectorMatrix = Matrix(true, vec);
@@ -228,7 +218,7 @@ HomogeneousPointVector transformPoint(Matrix matrix, HomogeneousPointVector vec)
 
     HomogeneousPointVector transformedVector;
 
-    double w = transformedFinalMatrix.matrix[3][0];
+    const double w = transformedFinalMatrix.matrix[3][0];
 
     transformedVector.x = transformedFinalMatrix.matrix[0][0] / w;
     transformedVector.y = transformedFinalMatrix.matrix[1][0] / w;
@@ -239,17 +229,17 @@ HomogeneousPointVector transformPoint(Matrix matrix, HomogeneousPointVector vec)
 
 
 HomogeneousPointVector
-rodriguesFormula(HomogeneousPointVector X, HomogeneousPointVector A, double angle) {
+rodriguesFormula(HomogeneousPointVector X, HomogeneousPointVector A, const double angle) {
 
-    double cosValue = cos(angle * pi / 180);
-    double sinValue = sin(angle * pi / 180);
+    const double cosValue = cos(degreeToRadian(angle));
+    const double sinValue = sin(degreeToRadian(angle));
 
     HomogeneousPointVector returnVector;
 
     returnVector = X * cosValue;
 
     //(1-cos theta) (a.x)
-    double dotProductValue = (1 - cosValue) * A.dotMultiplication(X);
+    const double dotProductValue = (1 - cosValue) * A.dotMultiplication(X);
 
     returnVector = returnVector + (A * dotProductValue);
 
@@ -260,28 +250,44 @@ rodriguesFormula(HomogeneousPointVector X, HomogeneousPointVector A, double angl
     return returnVector;
 }
 
+class SmallStack {
+public:
+    stack<Matrix> Stack;
 
-stack<Matrix> smallStack;
-stack<stack<Matrix>> bigStack;
+    SmallStack() {
+        Matrix I(1);
+        Stack.push(I);
+    };
+};
+
+stack<SmallStack> bigStack;
 
 HomogeneousPointVector eye, look, up;
 HomogeneousPointVector l, u, r;
 double fovY, aspectRatio, near, far;
 
+ifstream inScene("scene.txt");
+ofstream outStage1("stage1.txt");
+ofstream outStage2("stage2.txt");
+ofstream outStage3("stage3.txt");
+
+
+void closeStreams() {
+    outStage1.close();
+    outStage2.close();
+    outStage3.close();
+}
+
 
 int main() {
-    ifstream scin("scene.txt");
-    ofstream outStage1("stage1.txt");
-    ofstream outStage2("stage2.txt");
-    ofstream outStage3("stage3.txt");
 
     outStage1 << std::fixed << std::setprecision(PRECISION_WIDTH);
     outStage2 << std::fixed << std::setprecision(PRECISION_WIDTH);
     outStage3 << std::fixed << std::setprecision(PRECISION_WIDTH);
 
-    scin >> eye.x >> eye.y >> eye.z;
-    scin >> look.x >> look.y >> look.z;
-    scin >> up.x >> up.y >> up.z;
+    inScene >> eye.x >> eye.y >> eye.z;
+    inScene >> look.x >> look.y >> look.z;
+    inScene >> up.x >> up.y >> up.z;
     eye.w = 1, look.w = 1, up.w = 1;
 
     l = look - eye;
@@ -291,105 +297,96 @@ int main() {
     u = r * l;
     u.makeUnitVector();
 
-    Matrix translationMatrixForEye(eye * -1);
-    Matrix rotationMatrixForEye(l, r, u);
+    Matrix translationMatrixForEye = Matrix(eye * -1);
+    Matrix rotationMatrixForEye = Matrix(l, r, u);
 
-    Matrix V = rotationMatrixForEye * translationMatrixForEye; // V = RT
-
-    scin >> fovY >> aspectRatio >> near >> far;
+    const Matrix V = rotationMatrixForEye * translationMatrixForEye; // V = RT
 
 
-    double fovX = fovY * aspectRatio;
+    /* for projection transformation */
 
+    inScene >> fovY >> aspectRatio >> near >> far;
 
-    double t = near * tan((fovY / 2) * pi / 180.0);
+    const double fovX = fovY * aspectRatio;
 
-    double r = near * tan((fovX / 2) * pi / 180.0);
+    const double t = near * tan((fovY / 2) * pi / 180.0);
+
+    const double r = near * tan((fovX / 2) * pi / 180.0);
 
     Matrix projectionMatrix(near, far, r, t);
 
-    Matrix I(1);
-    smallStack.push(I);
+
+    SmallStack smallStack;
+
 
     string command;
+
     //while true
     while (true) {
         //input command
-        scin >> command;
-
+        inScene >> command;
 
         //if command = “triangle”
         if (command == "triangle") {
 
             //input three trianglePoints
-            HomogeneousPointVector trianglePoints[3];
-            scin >> trianglePoints[0].x >> trianglePoints[0].y >> trianglePoints[0].z;
-            scin >> trianglePoints[1].x >> trianglePoints[1].y >> trianglePoints[1].z;
-            scin >> trianglePoints[2].x >> trianglePoints[2].y >> trianglePoints[2].z;
+            vector<HomogeneousPointVector> trianglePoints(3);
+            inScene >> trianglePoints[0].x >> trianglePoints[0].y >> trianglePoints[0].z;
+            inScene >> trianglePoints[1].x >> trianglePoints[1].y >> trianglePoints[1].z;
+            inScene >> trianglePoints[2].x >> trianglePoints[2].y >> trianglePoints[2].z;
 
             //for each three point P
             for (const auto &trianglePoint : trianglePoints) {
 
                 //P’ <- transformPoint(S.top,P)
-                HomogeneousPointVector model = transformPoint(smallStack.top(), trianglePoint);
+                HomogeneousPointVector model = transformPoint(smallStack.Stack.top(), trianglePoint);
                 HomogeneousPointVector view = transformPoint(V, model);
                 HomogeneousPointVector projection = transformPoint(projectionMatrix, view);
 
                 //output P’
-                outStage1 << fixed << model.x << " " << model.y << " " << model.z << endl;
+                outStage1 << model.x << " " << model.y << " " << model.z << endl;
 
-                outStage2 << fixed << view.x << " " << view.y << " " << view.z << endl;
+                outStage2 << view.x << " " << view.y << " " << view.z << endl;
 
-                outStage3 << fixed << projection.x << " " << projection.y << " " << projection.z << endl;
+                outStage3 << projection.x << " " << projection.y << " " << projection.z << endl;
             }
 
             outStage1 << endl;
             outStage2 << endl;
             outStage3 << endl;
 
-        }
-            //else if command = “translate”
-        else if (command == "translate") {
+        } else if (command == "translate") {  //else if command = “translate”
 
-            //input translation amounts
             double tx, ty, tz;
-            scin >> tx >> ty >> tz;
+            inScene >> tx >> ty >> tz;
 
-            //generate the corresponding translation matrix T
+            //creating a HomogeneousPointVector from these 3 values
             HomogeneousPointVector tem(tx, ty, tz);
             Matrix translationMatrix(tem);
 
-            //S.push(product(S.top,T))
-            smallStack.push(smallStack.top() * translationMatrix);
-        }
-            //else if command = “scale”
-        else if (command == "scale") {
+            smallStack.Stack.push(smallStack.Stack.top() * translationMatrix);
 
+        } else if (command == "scale") {     //else if command = “scale”
             //input scaling factors
             double sx, sy, sz;
-            scin >> sx >> sy >> sz;
+            inScene >> sx >> sy >> sz;
 
-            //generate the corresponding scaling matrix T
-            Matrix scalingMatrix(sx, sy, sz);
+            Matrix scalingMatrix = Matrix(sx, sy, sz);
 
-            //S.push(product(S.top,T))
-            smallStack.push(smallStack.top() * scalingMatrix);
-        }
-            //else if command = “rotate”
-        else if (command == "rotate") {
+            smallStack.Stack.push(smallStack.Stack.top() * scalingMatrix);
 
-            //input rotation angle and axis
+        } else if (command == "rotate") {    //else if command = “rotate”
+
             double angle;
             HomogeneousPointVector axis;
-            scin >> angle >> axis.x >> axis.y >> axis.z;
+            inScene >> angle >> axis.x >> axis.y >> axis.z;
 
             //generate the corresponding rotation matrix T
             axis.makeUnitVector();
 
-
-            HomogeneousPointVector i(1, 0, 0);
-            HomogeneousPointVector j(0, 1, 0);
-            HomogeneousPointVector k(0, 0, 1);
+            HomogeneousPointVector i = HomogeneousPointVector(1, 0, 0);
+            HomogeneousPointVector j = HomogeneousPointVector(0, 1, 0);
+            HomogeneousPointVector k = HomogeneousPointVector(0, 0, 1);
 
             HomogeneousPointVector c1 = rodriguesFormula(i, axis, angle);
             HomogeneousPointVector c2 = rodriguesFormula(j, axis, angle);
@@ -403,31 +400,22 @@ int main() {
                     {0,    0,    0,    1}
             };
 
-            //S.push(product(S.top,T))
-            smallStack.push((smallStack.top() * rotationMatrix));
-        }
-            //else if command = “push”
-        else if (command == "push") {
-            //do it yourself
+            smallStack.Stack.push((smallStack.Stack.top() * rotationMatrix));
+
+        } else if (command == "push") {    //else if command = “push”
+
             bigStack.push(smallStack);
-        }
-            //else if command = “pop”
-        else if (command == "pop") {
-            //do it yourself
+
+        } else if (command == "pop") {   //else if command = “pop”
 
             smallStack = bigStack.top();
             bigStack.pop();
-        }
-            //else if command = “end”
-        else if (command == "end") {
-            //break
+
+        } else if (command == "end") {
             break;
         }
     }
 
-    outStage1.close();
-    outStage2.close();
-    outStage3.close();
-
+    closeStreams();
     return 0;
 }
