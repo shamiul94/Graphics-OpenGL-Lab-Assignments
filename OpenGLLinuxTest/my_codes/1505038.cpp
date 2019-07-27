@@ -15,7 +15,7 @@
 
 #else
 
-#include "windows.h"
+#include <windows.h>
 #include <gl.h>
 #include <glu.h>
 #include <glut.h>
