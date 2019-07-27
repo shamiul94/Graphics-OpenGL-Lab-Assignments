@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/codes/demo.cpp
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+GL/glut.h
+-
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/codes/test.cpp
+

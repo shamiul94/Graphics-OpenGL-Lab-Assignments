@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/spheretocube.dir/codes/sphere-to-cube.cpp.o  -o spheretocube -lglut -lGLU -lGL 

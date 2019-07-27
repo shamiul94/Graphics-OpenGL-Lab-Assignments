@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/testing-ray.dir/ray-tracer-offline-codes/test.cpp.o  -o testing-ray -lglut -lGLU -lGL 

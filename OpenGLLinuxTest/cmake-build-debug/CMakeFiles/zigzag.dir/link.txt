@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/zigzag.dir/online/ball.cpp.o  -o zigzag 

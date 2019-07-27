@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/OpenGLLinuxTest1.dir/main.cpp.o  -o OpenGLLinuxTest1 -lglut -lGLU -lGL 

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/my_codes/1505038.cpp
+bits/stdc++.h
+-
+bitmap_image.hpp
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/my_codes/bitmap_image.hpp
+GL/gl.h
+-
+GL/glu.h
+-
+GL/glut.h
+-
+windows.h
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/my_codes/windows.h
+gl.h
+-
+glu.h
+-
+glut.h
+-
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/my_codes/bitmap_image.hpp
+algorithm
+-
+cmath
+-
+cstdlib
+-
+fstream
+-
+iostream
+-
+iterator
+-
+limits
+-
+string
+-
+

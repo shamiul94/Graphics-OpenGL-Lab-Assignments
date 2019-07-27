@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/codes/sphere-to-cube.cpp
+bits/stdc++.h
+-
+GL/glut.h
+-
+

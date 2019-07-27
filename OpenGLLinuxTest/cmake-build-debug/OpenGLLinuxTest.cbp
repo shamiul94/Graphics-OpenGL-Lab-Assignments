@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="OpenGLLinuxTest"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="1505038-ray-tracer">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/1505038-ray-tracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 1505038-ray-tracer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="1505038-ray-tracer/fast">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/1505038-ray-tracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 1505038-ray-tracer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spheretocube">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/spheretocube" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 spheretocube"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spheretocube/fast">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/spheretocube" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 spheretocube/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testing-ray">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/testing-ray" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing-ray"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testing-ray/fast">
+				<Option output="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/testing-ray" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing-ray/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/shamiul93/CLionProjects/OpenGLLinuxTest/codes/sphere-to-cube.cpp">
+			<Option target="spheretocube"/>
+		</Unit>
+		<Unit filename="/home/shamiul93/CLionProjects/OpenGLLinuxTest/my_codes/1505038.cpp">
+			<Option target="1505038-ray-tracer"/>
+		</Unit>
+		<Unit filename="/home/shamiul93/CLionProjects/OpenGLLinuxTest/ray-tracer-offline-codes/test.cpp">
+			<Option target="testing-ray"/>
+		</Unit>
+		<Unit filename="/home/shamiul93/CLionProjects/OpenGLLinuxTest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

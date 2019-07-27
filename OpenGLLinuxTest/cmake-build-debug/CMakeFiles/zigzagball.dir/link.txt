@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/zigzagball.dir/codes/zigzag-ball.cpp.o  -o zigzagball -lglut -lGLU -lGL 

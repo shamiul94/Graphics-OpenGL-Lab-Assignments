@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/1505038-ray-tracer.dir/my_codes/1505038.cpp.o  -o 1505038-ray-tracer -lglut -lGLU -lGL 

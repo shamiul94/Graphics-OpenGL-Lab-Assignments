@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/offline54.dir/Offline/demo54.cpp.o  -o offline54 -lglut -lGLU -lGL 

@@ -1,0 +1,5 @@
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/1505038-ray-tracer.dir
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/spheretocube.dir
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/testing-ray.dir

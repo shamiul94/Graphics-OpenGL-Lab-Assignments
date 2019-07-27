@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shamiul93/CLionProjects/OpenGLLinuxTest/Offline/demo79.cpp
+iostream
+-
+fstream
+-
+cstdio
+-
+cstdlib
+-
+string
+-
+stack
+-
+vector
+-
+cmath
+-
+

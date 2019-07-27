@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -framework GLUT -framework OpenGL -g   CMakeFiles/OpenGLLinuxTest.dir/main.cpp.o  -o OpenGLLinuxTest 
