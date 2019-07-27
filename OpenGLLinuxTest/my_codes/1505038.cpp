@@ -214,7 +214,6 @@ void drawSphere(double radius, int slices, int stacks) {
     }
     //draw quads using generated points
     for (i = 0; i < stacks; i++) {
-//        glColor3f(1, 0, 0);
         for (j = 0; j < slices; j++) {
             glBegin(GL_QUADS);
             {
@@ -368,7 +367,6 @@ public:
         double dotValue = normalAtIntersectionPoint.dot(mainRay.directionUnitVector);
         if (dotValue > 0) {
             normalAtIntersectionPoint = normalAtIntersectionPoint * (-1.0);
-//            normalAtIntersectionPoint = Vector(0, 0, 0) - normalAtIntersectionPoint;
         }
 
         for (auto &Light : Lights) {
@@ -394,10 +392,10 @@ public:
                 double lambert = max(lightRayDirection.dot(normalAtIntersectionPoint), 0.0);
                 Vector r = normalAtIntersectionPoint * 2.0 * lightRayDirection.dot(normalAtIntersectionPoint) -
                            lightRayDirection;
-                double phong = max(mainRay.directionUnitVector.dot(r), 0.0);
+                double Phong = max(mainRay.directionUnitVector.dot(r), 0.0);
                 resultColour += getColourAtAPoint(IntersectionPoint) * lightFactor * lambert * diffuseCoefficient;
 
-                resultColour += Colour(255, 255, 255) * lightFactor * pow(phong, shininessValue) *
+                resultColour += Colour(255, 255, 255) * lightFactor * pow(Phong, shininessValue) *
                                 specularCoefficient;
             }
         }
