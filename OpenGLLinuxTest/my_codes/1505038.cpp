@@ -1,7 +1,7 @@
 /**
  * @author: Rumman (1505038)
  * @details: Mighty Ray Tracing
- * @todo: Being lifeless.
+ * @todo: Ray Tracing.
  */
 
 #include <bits/stdc++.h>
@@ -421,7 +421,6 @@ public:
                 if (intersectOrNot.t_value > 0 && intersectOrNot.t_value < minimumValueOfParameterT) {
                     minimumObstacleIndex = i;
                     minimumValueOfParameterT = intersectOrNot.t_value;
-//                    minimumValueOfParameterT = ParameterT;
                 }
             }
             if (minimumObstacleIndex != NEG_INF) {
@@ -543,7 +542,7 @@ public:
         C = Vector(0, 0, 0);
     }
 
-    Triangle(Vector nA, Vector nB, Vector nC) {
+    Triangle(const Vector &nA, const Vector &nB, const Vector &nC) {
         A = nA;
         B = nB;
         C = nC;
@@ -589,7 +588,6 @@ public:
         d1 = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2]);
         d2 = matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[2][0] * matrix[1][2]);
         d3 = matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[2][0] * matrix[1][1]);
-//        cout << d1 << " " << d2 << " " << d3 << endl ;
         return (d1 - d2 + d3);
     }
 
@@ -697,8 +695,8 @@ public:
     }
 
     void drawObject() override {
-        int tileInARow = static_cast<int>(totalWidth / tileWidth);
-        int tileInAColumn = static_cast<int>(totalHeight / tileHeight);
+        auto tileInARow = static_cast<int>(totalWidth / tileWidth);
+        auto tileInAColumn = static_cast<int>(totalHeight / tileHeight);
         tileInARow += isOdd(tileInARow); // making it an even number
         tileInAColumn += isOdd(tileInAColumn);
 
@@ -715,13 +713,11 @@ public:
         }
     }
 
-
-//    Colour getColourAtAPoint(Vector IntersectingPoint)
     Colour getColourAtAPoint(Vector IntersectingPoint) override {
         double xDistance = IntersectingPoint.x + totalWidth / 2;
         double yDistance = IntersectingPoint.y + totalHeight / 2;
-        int i = (int) (xDistance / tileWidth);
-        int j = (int) (yDistance / tileHeight);
+        auto i = (int) (xDistance / tileWidth);
+        auto j = (int) (yDistance / tileHeight);
         int remainderI = i % 2;
         int remainderJ = j % 2;
         if (remainderI < 0) {
@@ -745,14 +741,15 @@ void populatePixelsWithColour(const vector<vector<Colour>> &frame) {
     bitmap_image image(static_cast<const unsigned int>(imageWidth), static_cast<const unsigned int>(imageHeight));
     for (int i = 0; i < imageHeight; i++) {
         for (int j = 0; j < imageWidth; j++) {
-            image.set_pixel(j, i, frame[i][j].r, frame[i][j].g, frame[i][j].b);
+            image.set_pixel(static_cast<const unsigned int>(j), static_cast<const unsigned int>(i),
+                            frame[i][j].r, frame[i][j].g, frame[i][j].b);
         }
     }
     image.save_image("1505038.bmp");
 }
 
 
-Colour getPixelColour(Ray mainRay) {
+Colour getPixelColour(const Ray &mainRay) {
     Colour resultColour(0, 0, 0);
     int closestObstacleIndex = NEG_INF;
     double minimumValueOfParameterT = INF;
@@ -792,7 +789,7 @@ void Capture() {
     double changeThroughColumn = (windowHeight * 1.0) / imageHeight;
 
     for (int i = 0; i < imageHeight; i++) {
-        frameAtNearPlane.push_back(vector<Colour>());
+        frameAtNearPlane.emplace_back(); // => frame.push_back(vector<Colour>());
 
         for (int j = 0; j < imageWidth; j++) {
             currLeftCorner = topLeftCornerOfWholeFrame + cameraRight * (j * changeThroughRow) -
@@ -814,14 +811,12 @@ void Capture() {
 }
 
 
-void loadTestData() {
+void setTestData() {
     windowWidth = 500;
     windowHeight = 500;
     cameraDistance = 25;
     aspectRatio = (windowWidth * 1.0) / windowHeight;
     fovY = 90;
-//    zNear = 1;
-//    zFar = 1000.0;
     imageWidth = 1024;
     imageHeight = 1024;
     reflectionLevel = 10;
@@ -830,39 +825,39 @@ void loadTestData() {
 
     Vector center(50, 35, 10);
     double radius = 10.0;
-//    temp = new Sphere(center, radius);
-//    temp->setColor(250, 250, 0);
-////    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
-//    temp->setCoefficients(0, 0, 0, 1);
-//    temp->setShineValue(10);
-//
-//    objectList.push_back(temp);
-////
-//    center.x = 20;
-//    center.y = 20;
-//    center.z = 20;
-//    radius = 8.0;
-//    temp = new Sphere(center, radius);
-//    temp->setColor(0, 0, 250);
-////    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
-//    temp->setCoefficients(0, 0, 0, 1);
-//
-//    temp->setShineValue(15);
-//
-//    objectList.push_back(temp);
-////
-////
-//    center.x = -5;
-//    center.y = 30;
-//    center.z = 40;
-//    radius = 3.0;
-//    temp = new Sphere(center, radius);
-//    temp->setColor(0, 250, 250);
-////    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
-//    temp->setCoefficients(0, 0, 0, 1);
-//
-//    temp->setShineValue(20);
-//    objectList.push_back(temp);
+    temp = new Sphere(center, radius);
+    temp->setColor(250, 250, 0);
+//    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
+    temp->setCoefficients(0, 0, 0, 1);
+    temp->setShineValue(10);
+
+    objectList.push_back(temp);
+////////////////////////////////////////////////////
+    center.x = 20;
+    center.y = 20;
+    center.z = 20;
+    radius = 8.0;
+    temp = new Sphere(center, radius);
+    temp->setColor(0, 0, 250);
+//    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
+    temp->setCoefficients(0, 0, 0, 1);
+
+    temp->setShineValue(15);
+
+    objectList.push_back(temp);
+/////////////////////////////////////////////////////
+    center.x = -5;
+    center.y = 30;
+    center.z = 40;
+    radius = 3.0;
+    temp = new Sphere(center, radius);
+    temp->setColor(0, 250, 250);
+//    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
+    temp->setCoefficients(0, 0, 0, 1);
+
+    temp->setShineValue(20);
+    objectList.push_back(temp);
+/////////////////////////////////////////////////////
 
     center.x = -5;
     center.y = 35;
@@ -875,6 +870,7 @@ void loadTestData() {
 
     temp->setShineValue(40);
     objectList.push_back(temp);
+/////////////////////////////////////////////////////
 
     center.x = -25;
     center.y = -35;
@@ -887,7 +883,7 @@ void loadTestData() {
 
     temp->setShineValue(40);
     objectList.push_back(temp);
-
+///////////////////////////////////////////////////////////////
 
     temp = new Triangle(Vector(-50, 0, 0), Vector(0, 0, 50), Vector(50, 0, 0));
     temp->setColor(200, 50, 30);
@@ -895,6 +891,7 @@ void loadTestData() {
 
     temp->setShineValue(1);
     objectList.push_back(temp);
+///////////////////////////////////////////////////////////////
 
 //    temp = new Triangle(Vector(-500, 500, 0), Vector(500, 500, 0), Vector(-500, -500, 0));
 //    temp->setColor(255, 255, 255);
@@ -903,6 +900,8 @@ void loadTestData() {
 //    temp->setShineValue(1);
 //
 //    objectList.push_back(temp);
+////////////////////////////////////////////////////////////////
+
 //    temp = new Triangle(Vector(500, 500, 0), Vector(-500, -500, 0), Vector(500, -500, 0));
 //    temp->setColor(255, 255, 255);
 //    temp->setCoefficients(0.4, 0.2, 0.2, 0.2);
@@ -910,10 +909,13 @@ void loadTestData() {
 //    temp->setShineValue(1);
 //    objectList.push_back(temp);
 
+////////////////////////////////////////////////////////////////
+
     temp = new Floor(200, 200, 10, 10);
     temp->setCoefficients(0.3, 0.2, 0.1, 0.4);
     temp->setShineValue(1);
     objectList.push_back(temp);
+
 
     Vector light1(70, 70, 70);
 //    Vector light2(100, 0, 0);
@@ -1274,14 +1276,14 @@ void display() {
 
         drawAxes();
         drawGrid();
-        for (int i = 0; i < objectList.size(); ++i) {
-            objectList[i]->drawObject();
+        for (auto &i : objectList) {
+            i->drawObject();
         }
         glColor3f(1, 1, 1);
-        for (int j = 0; j < Lights.size(); ++j) {
+        for (auto &Light : Lights) {
             glPushMatrix();
             {
-                glTranslatef((GLfloat) Lights[j].x, (GLfloat) Lights[j].y, (GLfloat) Lights[j].z);
+                glTranslatef((GLfloat) Light.x, (GLfloat) Light.y, (GLfloat) Light.z);
                 glutSolidSphere(0.5, 7, 7);
             }
             glPopMatrix();
@@ -1342,7 +1344,7 @@ void init() {
 int main(int argc, char **argv) {
     glutInit(&argc, argv);
 
-//    loadTestData();
+//    setTestData();
     inputDataFromFile();
     glutInitWindowSize(windowWidth, windowHeight);
     glutInitWindowPosition(300, 100);
