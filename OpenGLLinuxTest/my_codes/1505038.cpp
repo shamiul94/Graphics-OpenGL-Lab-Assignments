@@ -390,9 +390,9 @@ public:
             if (!interceptedByAnotherObjectBefore) {
                 double lightFactor = 1;
                 double lambert = max(lightRayDirection.dot(normalAtIntersectionPoint), 0.0);
-                Vector r = normalAtIntersectionPoint * 2.0 * lightRayDirection.dot(normalAtIntersectionPoint) -
-                           lightRayDirection;
-                double Phong = max(mainRay.directionUnitVector.dot(r), 0.0);
+                Vector R = normalAtIntersectionPoint * 2.0 * lightRayDirection.dot(normalAtIntersectionPoint) -
+                           lightRayDirection; // R = 2(L.N)N-L;
+                double Phong = max(mainRay.directionUnitVector.dot(R), 0.0);
                 resultColour += getColourAtAPoint(IntersectionPoint) * lightFactor * lambert * diffuseCoefficient;
 
                 resultColour += Colour(255, 255, 255) * lightFactor * pow(Phong, shininessValue) *
@@ -408,19 +408,8 @@ public:
             Ray reflectedRay(reflectedRayStart, reflectionRayDirection);
 
             int minimumObstacleIndex = NEG_INF;
-            double minimumValueOfParameterT = INF;
+            minimumObstacleIndex = getMinimumObstacleIdx(reflectedRay, minimumObstacleIndex);
 
-            for (int i = 0; i < objectList.size(); i++) {
-                Object *obj = objectList[i];
-
-                // intersectAndIlluminate(reflectedRay, 0) -> 0 because just check if intersect or not
-                Ray intersectOrNot = obj->intersectAndIlluminate(reflectedRay, 0);
-
-                if (intersectOrNot.t_value > 0 && intersectOrNot.t_value < minimumValueOfParameterT) {
-                    minimumObstacleIndex = i;
-                    minimumValueOfParameterT = intersectOrNot.t_value;
-                }
-            }
             if (minimumObstacleIndex != NEG_INF) {
                 Ray nextLevel = objectList[minimumObstacleIndex]->intersectAndIlluminate(reflectedRay,
                                                                                          reflectionLevel - 1);
@@ -429,6 +418,26 @@ public:
         }
         return resultColour;
     }
+
+    int getMinimumObstacleIdx(const Ray &reflectedRay, int minimumObstacleIndex) {
+
+        minimumObstacleIndex = NEG_INF;
+        double minimumValueOfParameterT = INF;
+
+        for (int i = 0; i < objectList.size(); i++) {
+            Object *obj = objectList[i];
+
+            // intersectAndIlluminate(reflectedRay, 0) -> 0 because just check if intersect or not
+            Ray intersectOrNot = obj->intersectAndIlluminate(reflectedRay, 0);
+
+            if (intersectOrNot.t_value > 0 && intersectOrNot.t_value < minimumValueOfParameterT) {
+                minimumObstacleIndex = i;
+                minimumValueOfParameterT = intersectOrNot.t_value;
+            }
+        }
+        return minimumObstacleIndex;
+    }
+
 
     virtual Vector getNormal(Vector intersectionPoint) {
         return Vector(0, 0, 1);
@@ -581,7 +590,7 @@ public:
         return crossVal.absoluteValue() / 2.0;
     }
 
-    double getDeterminent(vector<vector<double>> matrix) {
+    double getDeterminant(vector<vector<double>> matrix) {
         double det, d1, d2, d3;
         d1 = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2]);
         d2 = matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[2][0] * matrix[1][2]);
@@ -589,12 +598,50 @@ public:
         return (d1 - d2 + d3);
     }
 
+
+    double getBaryCentricT(Ray ray) {
+        double Area = getTriangleArea();
+        double beta, gamma, t;
+        Vector o, d; // o -> origin and d -> direction
+
+        o = ray.startVector;
+        d = ray.directionUnitVector;
+
+        beta = getDeterminant(vector<vector<double>>{
+                {A.x - o.x, A.x - C.x, d.x},
+                {A.y - o.y, A.y - C.y, d.y},
+                {A.z - o.z, A.z - C.z, d.z}
+        });
+
+        gamma = getDeterminant(vector<vector<double>>{
+                {A.x - B.x, A.x - o.x, d.x},
+                {A.y - B.y, A.y - o.y, d.y},
+                {A.z - B.z, A.z - o.z, d.z}
+        });
+
+        t = getDeterminant(vector<vector<double>>{
+                {A.x - B.x, A.x - C.x, A.x - o.x},
+                {A.y - B.y, A.y - C.y, A.y - o.y},
+                {A.z - B.z, A.z - C.z, A.z - o.z}
+        });
+
+        beta /= Area;
+        gamma /= Area;
+        t /= Area;
+
+        if (gamma < 0 || gamma > 1) return -1;
+        if (beta < 0 || beta > 1 - gamma) return -1;
+        if (t < 0) return -1;
+
+        return t;
+    }
+
     double getIntersectionParameterT(Ray ray) override {
         Vector side1, side2, normalOfTriangle, q, r;
         double determinant;
         double inverseDeterminant;
-        double u;
-        double v;
+        double beta;
+        double gamma;
         double t;
 
         side1 = B - A;
@@ -612,17 +659,20 @@ public:
 
         r = ray.startVector - A;
 
-        u = r.dot(normalOfTriangle) * inverseDeterminant;
+        beta = r.dot(normalOfTriangle) * inverseDeterminant;
 
-        if (u < 0.0 || u > 1.0) {
+        if (beta < 0.0 || beta > 1.0) {
             return -1;
         }
+
         q = r * side1;
-        v = ray.directionUnitVector.dot(q) * inverseDeterminant;
-        if (v < 0.0 || (u + v) > 1.0) {
+        gamma = ray.directionUnitVector.dot(q) * inverseDeterminant;
+
+        if (gamma < 0.0 || (beta + gamma) > 1.0) {
             return -1;
         }
         t = side2.dot(q) * inverseDeterminant;
+
         if (t > EPSILON) { //ray intersection
             return t;
         }
@@ -712,26 +762,27 @@ public:
     }
 
     Colour getColourAtAPoint(Vector IntersectingPoint) override {
-        double xDistance = IntersectingPoint.x + totalWidth / 2;
-        double yDistance = IntersectingPoint.y + totalHeight / 2;
-        auto i = (int) (xDistance / tileWidth);
-        auto j = (int) (yDistance / tileHeight);
-        int remainderI = i % 2;
-        int remainderJ = j % 2;
-        if (remainderI < 0) {
-            remainderI *= -1;
+        auto dx = static_cast<int>((static_cast<double>(IntersectingPoint.x + totalWidth / 2.0)) / tileWidth);
+        auto dy = static_cast<int>((static_cast<double>(IntersectingPoint.y + totalHeight / 2.0)) / tileHeight);
+
+        int remI = dx % 2;
+        int remJ = dy % 2;
+
+        if (remI < 0) {
+            remI *= -1;
         }
-        if (remainderJ < 0) {
-            remainderJ *= -1;
+        if (remJ < 0) {
+            remJ *= -1;
         }
-        if ((remainderI == 0 && remainderJ == 0) || (remainderI == 1 && remainderJ == 1)) {
+
+        if ((remI == 0 && remJ == 0)) {
+            return Colour(255, 255, 255);
+        } else if ((remI == 1 && remJ == 1)) {
             return Colour(255, 255, 255);
         } else {
             return Colour(0, 0, 0);
         }
     }
-
-
 };
 
 
@@ -769,7 +820,6 @@ Colour getPixelColour(const Ray &mainRay) {
 
 
 void Capture() {
-//    Colour frameAtNearPlane[imageHeight][imageWidth];
     vector<vector<Colour>> frameAtNearPlane; // it's correct. I cross chacked. Don't change.
 
     Vector currLeftCorner, eyeToPixelDirection, eyeToPixelRayStart;
@@ -798,8 +848,6 @@ void Capture() {
             eyeToPixelRayStart = cameraPos;
 
             Ray eyeToPixelRay(eyeToPixelRayStart, eyeToPixelDirection);
-
-//            frameAtNearPlane[i][j] = getPixelColour(eyeToPixelRay);
 
             frameAtNearPlane[i].push_back(getPixelColour(eyeToPixelRay));
         }
@@ -923,9 +971,10 @@ void setTestData() {
 //    Lights.push_back(light3);
 }
 
+// T1 = vector or point , T2 = Colour
 
-void
-generateTriangle(Vector A, Vector B, Vector C, Colour color, double a, double d, double s, double r, double shine) {
+template<typename T1, typename T2>
+void generateTriangle(T1 A, T1 B, T1 C, T2 color, double a, double d, double s, double r, double shine) {
     Object *obj = new Triangle(A, B, C);
     obj->setColor(color.r, color.g, color.b);
     obj->setCoefficients(a, d, s, r);

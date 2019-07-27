@@ -45,12 +45,13 @@ void myfunc(T1 x, T2 y, int d)
     cout << d << endl ;
 }
 
-int main() {
-//    base *b;
-    derived1 d1(1,2,3);
-    base b;
-    myfunc(b, d1, 9);
-//    b = &d1;
-//    b->draw();
+void f(int &a){
+    a = 9;
+}
 
+int main() {
+    int x = 5;
+    cout << x << endl ;
+    f(x);
+    cout << x << endl ;
 }
