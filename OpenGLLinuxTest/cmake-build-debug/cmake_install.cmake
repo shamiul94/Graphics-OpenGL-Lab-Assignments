@@ -1,4 +1,4 @@
-# Install script for directory: /home/shamiul93/CLionProjects/OpenGLLinuxTest
+# Install script for directory: /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

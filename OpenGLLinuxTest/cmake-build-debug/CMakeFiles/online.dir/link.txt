@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/online.dir/online/online.cpp.o  -o online -lglut -lGLU -lGL 

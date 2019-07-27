@@ -397,12 +397,8 @@ public:
                 double phong = max(mainRay.directionUnitVector.dot(r), 0.0);
                 resultColour += getColourAtAPoint(IntersectionPoint) * lightFactor * lambert * diffuseCoefficient;
 
-//                resultColour += Colour(255, 255, 255) * lightFactor * pow(phong, shininessValue) *
-//                                specularCoefficient;
-
-                resultColour += getColourAtAPoint(IntersectionPoint) * lightFactor * pow(phong, shininessValue) *
+                resultColour += Colour(255, 255, 255) * lightFactor * pow(phong, shininessValue) *
                                 specularCoefficient;
-
             }
         }
 //        return  resultColour;

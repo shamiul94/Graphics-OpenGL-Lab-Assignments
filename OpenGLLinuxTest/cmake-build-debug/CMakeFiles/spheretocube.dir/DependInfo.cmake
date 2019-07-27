@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/shamiul93/CLionProjects/OpenGLLinuxTest/codes/sphere-to-cube.cpp" "/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/spheretocube.dir/codes/sphere-to-cube.cpp.o"
+  "/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/codes/sphere-to-cube.cpp" "/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/spheretocube.dir/codes/sphere-to-cube.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

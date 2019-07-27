@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
+      <config projectName="OpenGLLinuxTest" targetName="1505038-ray-tracer" />
       <config projectName="OpenGLLinuxTest" targetName="spheretocube" />
       <config projectName="OpenGLLinuxTest" targetName="testing-ray" />
-      <config projectName="OpenGLLinuxTest" targetName="1505038-ray-tracer" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -44,13 +44,8 @@
       <file leaf-file-name="1505038.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_codes/1505038.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="408" column="34" lean-forward="true" selection-start-line="408" selection-start-column="34" selection-end-line="408" selection-end-column="34" />
-              <folding>
-                <element signature="e#97#121#0" expanded="true" />
-                <element signature="e#169#187#0" expanded="true" />
-                <element signature="e#237#308#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="400" column="52" lean-forward="true" selection-start-line="400" selection-start-column="52" selection-end-line="400" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -58,7 +53,7 @@
       <file leaf-file-name="description.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/description.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="528">
               <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
             </state>
           </provider>
@@ -67,7 +62,7 @@
       <file leaf-file-name="test.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ray-tracer-offline-codes/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="1224">
               <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
               <folding>
                 <element signature="e#586#612#0" expanded="true" />
@@ -236,7 +231,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/ddd/1205032" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
@@ -286,11 +281,12 @@
       <workItem from="1563723418785" duration="11779000" />
       <workItem from="1563942414986" duration="53849000" />
       <workItem from="1564121915615" duration="67891000" />
+      <workItem from="1564253459815" duration="190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192510000" />
+    <option name="totallyTimeSpent" value="192700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="27" width="1319" height="741" extended-state="6" />
@@ -301,7 +297,6 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32328308" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32328308" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32903227" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32495812" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -315,6 +310,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,9 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18504">
           <caret line="771" column="39" selection-start-line="771" selection-start-column="39" selection-end-line="771" selection-end-column="39" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -514,13 +507,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/scene2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/scene2.txt" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/scene.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
@@ -540,7 +527,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ray-tracer-offline-codes/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="1224">
           <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
           <folding>
             <element signature="e#586#612#0" expanded="true" />
@@ -559,10 +546,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/description.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="528">
           <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/1505038.bmp">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ray-tracer-offline-codes/demo.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -578,25 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/1505038.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_codes/1505038.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="408" column="34" lean-forward="true" selection-start-line="408" selection-start-column="34" selection-end-line="408" selection-end-column="34" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-            <element signature="e#169#187#0" expanded="true" />
-            <element signature="e#237#308#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="400" column="52" lean-forward="true" selection-start-line="400" selection-start-column="52" selection-end-line="400" selection-end-column="52" />
         </state>
       </provider>
     </entry>

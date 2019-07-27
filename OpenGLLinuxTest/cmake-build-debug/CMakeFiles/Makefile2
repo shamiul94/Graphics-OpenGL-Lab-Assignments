@@ -54,10 +54,10 @@ RM = "/media/shamiul93/Software and Media/Necessary Softwares/Linux Softwares/cl
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shamiul93/CLionProjects/OpenGLLinuxTest
+CMAKE_SOURCE_DIR = /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/1505038-ray-tracer.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-deb
 CMakeFiles/1505038-ray-tracer.dir/all:
 	$(MAKE) -f CMakeFiles/1505038-ray-tracer.dir/build.make CMakeFiles/1505038-ray-tracer.dir/depend
 	$(MAKE) -f CMakeFiles/1505038-ray-tracer.dir/build.make CMakeFiles/1505038-ray-tracer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target 1505038-ray-tracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target 1505038-ray-tracer"
 .PHONY : CMakeFiles/1505038-ray-tracer.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/1505038-ray-tracer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/1505038-ray-tracer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/1505038-ray-tracer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/1505038-ray-tracer.dir/rule
 
 # Convenience name for target.
@@ -103,7 +103,7 @@ clean: CMakeFiles/1505038-ray-tracer.dir/clean
 CMakeFiles/spheretocube.dir/all:
 	$(MAKE) -f CMakeFiles/spheretocube.dir/build.make CMakeFiles/spheretocube.dir/depend
 	$(MAKE) -f CMakeFiles/spheretocube.dir/build.make CMakeFiles/spheretocube.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target spheretocube"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target spheretocube"
 .PHONY : CMakeFiles/spheretocube.dir/all
 
 # Include target in all.
@@ -113,9 +113,9 @@ all: CMakeFiles/spheretocube.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/spheretocube.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/spheretocube.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/spheretocube.dir/rule
 
 # Convenience name for target.
@@ -140,7 +140,7 @@ clean: CMakeFiles/spheretocube.dir/clean
 CMakeFiles/testing-ray.dir/all:
 	$(MAKE) -f CMakeFiles/testing-ray.dir/build.make CMakeFiles/testing-ray.dir/depend
 	$(MAKE) -f CMakeFiles/testing-ray.dir/build.make CMakeFiles/testing-ray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target testing-ray"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target testing-ray"
 .PHONY : CMakeFiles/testing-ray.dir/all
 
 # Include target in all.
@@ -150,9 +150,9 @@ all: CMakeFiles/testing-ray.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testing-ray.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testing-ray.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/testing-ray.dir/rule
 
 # Convenience name for target.

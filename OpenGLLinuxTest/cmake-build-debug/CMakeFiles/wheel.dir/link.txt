@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/wheel.dir/codes/wheel.cpp.o  -o wheel -lglut -lGLU -lGL 

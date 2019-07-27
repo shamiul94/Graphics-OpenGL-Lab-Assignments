@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/shamiul93/CLionProjects/OpenGLLinuxTest/ray-tracer-offline-codes/test.cpp" "/home/shamiul93/CLionProjects/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/testing-ray.dir/ray-tracer-offline-codes/test.cpp.o"
+  "/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/ray-tracer-offline-codes/test.cpp" "/home/shamiul93/Documents/Graphics-all-offline-git/Graphics-OpenGL-Lab-Assignments/OpenGLLinuxTest/cmake-build-debug/CMakeFiles/testing-ray.dir/ray-tracer-offline-codes/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

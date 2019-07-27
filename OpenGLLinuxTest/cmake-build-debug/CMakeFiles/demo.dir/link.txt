@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/demo.dir/codes/demo.cpp.o CMakeFiles/demo.dir/codes/test.cpp.o  -o demo -lglut -lGLU -lGL 

@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/offline6.dir/Offline/demo6.cpp.o  -o offline6 -lglut -lGLU -lGL 

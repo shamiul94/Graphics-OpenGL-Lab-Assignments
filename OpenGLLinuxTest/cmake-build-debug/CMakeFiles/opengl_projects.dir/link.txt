@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -framework GLUT -framework OpenGL -g   CMakeFiles/opengl_projects.dir/main.cpp.o  -o opengl_projects 

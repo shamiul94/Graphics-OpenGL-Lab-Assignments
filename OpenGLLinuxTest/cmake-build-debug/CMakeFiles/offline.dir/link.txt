@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/offline.dir/Offline/Offline2.cpp.o  -o offline -lglut -lGLU -lGL 
