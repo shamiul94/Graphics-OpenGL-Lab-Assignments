@@ -261,6 +261,17 @@ public:
         b = B;
     }
 
+    void clip(){
+        if(r < 0) r = 0; 
+        if(r > 255) r = 255; 
+
+        if(g < 0) g = 0; 
+        if(g > 255) g = 255; 
+
+        if(b < 0) b = 0; 
+        if(b > 255) b = 255; 
+    }
+
     Colour operator*(const double &coefficient) {
         Colour result;
         result.r = static_cast<color_t>(r * coefficient);
@@ -349,12 +360,14 @@ public:
         intersectionPoint = ray.startVector + ray.directionUnitVector * ret.t_value;
 
         ret.colour = getColourAtAPoint(intersectionPoint) * ambientCoefficient;
+        ret.colour.clip(); 
 
         if (ret.t_value < 0) return ret;
         if (reflectionLevel < 1) return ret;
 
         finalColor = Illuminate(ray, intersectionPoint, ret.t_value, reflectionLevel);
         ret.colour = finalColor;
+        ret.colour.clip(); 
 
         return ret;
     }
@@ -1119,7 +1132,9 @@ void inputDataFromFile() {
     }
 
     obj = new Floor(1000, 1000, 10, 10);
-    obj->setCoefficients(0.4, 0.1, 0.2, 0.3);
+    obj->setCoefficients(0.4, 0.1, 0.2, 0.4);
+    // obj->setCoefficients(0, 0, 0.8, .2);
+
     obj->setShineValue(1);
     objectList.push_back(obj);
 
