@@ -3,17 +3,17 @@
 ## Course Contents:
 
 ### OpenGL Drawings:
-Fully controllable camera simulation
-Sphere to Cylinder simulation
-Wheel movement
-Reflection of moving arrow in a square
-Folding or Unfolding faces of a cube
+1. Fully controllable camera simulation
+2. Sphere to Cylinder simulation
+3. Wheel movement
+4. Reflection of moving arrow in a square
+5. Folding or Unfolding faces of a cube
 ### Graphics Pipeline Stages:
-Modeling Transformation
-View Transformation
-Projection Transformation
+1. Modeling Transformation
+2. View Transformation
+3. Projection Transformation
 ### Ray Tracing:
-Rendering a described scene with Sphere, Pyramid, light source considering provided level of reflection using OpenGL
+1. Rendering a described scene with Sphere, Pyramid, light source considering provided level of reflection using OpenGL
 
 ## A friendly advice 
 If you are using this code, please don't copy like a blind.
